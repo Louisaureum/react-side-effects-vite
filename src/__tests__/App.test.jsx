@@ -56,8 +56,8 @@ test('App component > fetches a new joke when button is clicked', async () => {
     json: () => Promise.resolve({ joke: 'Another programming joke!' }),
   })
 
-  // Click the "Get a New Joke" button
-  fireEvent.click(screen.getByText(/Get a New Joke/i))
+  // Click the "New Joke" button
+  fireEvent.click(screen.getByRole('button', { name: /^New Joke$/i }))
 
   // Wait for the new joke to appear
   await waitFor(() => {
